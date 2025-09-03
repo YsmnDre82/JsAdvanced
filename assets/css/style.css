@@ -1,0 +1,34 @@
+@font-face {
+     font-family: yekan;
+     src: url("/assets/font/persianFont/yekan-font/yekan-regular.woff");
+     src: url("/assets/font/persianFont/yekan-font/yekan-regular.ttf");
+   }
+
+
+   body {
+     font-family: yekan;
+     padding: 20px;
+     direction: rtl;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background-color: #f5f5f5;
+   }
+
+   button {
+     background: greenyellow;
+     padding: 1rem;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.491);
+     cursor: pointer;
+     transition: all 500ms;
+     font-family: inherit;
+     font-weight: bolder;
+     border: none;
+     margin-top: 5px;
+   }
+
+   button:hover {
+     background: aqua !important;
+   }
+
