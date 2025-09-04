@@ -4,6 +4,14 @@
      src: url("/assets/font/persianFont/yekan-font/yekan-regular.ttf");
    }
 
+   .red {
+    background-color: rgb(255, 57, 57);
+   }
+
+   .blue{
+    background-color: rgb(79, 79, 255);
+   }
+
 
    body {
      font-family: yekan;
@@ -92,4 +100,8 @@
   background: #4CAF50;
   color: white;
   font-size: 1.1rem;
+}
+
+input{
+  padding: 1rem;
 }
