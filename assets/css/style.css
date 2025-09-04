@@ -1,107 +1,250 @@
 @font-face {
-     font-family: yekan;
-     src: url("/assets/font/persianFont/yekan-font/yekan-regular.woff");
-     src: url("/assets/font/persianFont/yekan-font/yekan-regular.ttf");
-   }
+  font-family: yekan;
+  src: url("/assets/font/persianFont/yekan-font/yekan-regular.woff");
+  src: url("/assets/font/persianFont/yekan-font/yekan-regular.ttf");
+}
 
-   .red {
-    background-color: rgb(255, 57, 57);
-   }
+/*  ====== Reset & base ====== */
+:root {
+  --bg1: linear-gradient(135deg, #0f172a 0%, #0b1220 50%);
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --glass: rgba(255, 255, 255, 0.06);
+  --accent: linear-gradient(90deg, #7c3aed, #06b6d4);
+  --muted: rgba(255, 255, 255, 0.7);
+  --radius: 14px;
+  font-family: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
 
-   .blue{
-    background-color: rgb(79, 79, 255);
-   }
+* {
+  box-sizing: border-box
+}
 
+html,
+body {
+  height: 100%;
+}
 
-   body {
-     font-family: yekan;
-     padding: 20px;
-     direction: rtl;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     background-color: #f5f5f5;
-   }
-
-   button {
-     background: greenyellow;
-     padding: 1rem;
-     border-radius: 10px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.491);
-     cursor: pointer;
-     transition: all 500ms;
-     font-family: inherit;
-     font-weight: bolder;
-     border: none;
-     margin-top: 5px;
-   }
-
-   button:hover {
-     background: aqua !important;
-   }
-
-/* فرم ثبت‌نام مدرن */
-.signup-form {
-  background: #fff;
-  padding: 2rem 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  width: 100%;
-  max-width: 400px;
-  margin: 2rem auto;
+body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 58, 237, 0.12), transparent),
+    radial-gradient(1000px 500px at 90% 90%, rgba(6, 182, 212, 0.08), transparent),
+    #071021;
+  color: #e6eef8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 32px;
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: yekan;
+  direction: rtl;
 }
 
-.signup-form h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #333;
-  font-size: 1.5rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.form-group label {
-  font-weight: bold;
-  color: #444;
-  margin-bottom: 0.2rem;
-}
-
-.form-group input {
-  padding: 0.7rem 0.9rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  background: #f9f9f9;
-  transition: border-color 0.3s;
-}
-
-.form-group input:focus {
-  border-color: #7ed957;
-  outline: none;
-}
-
-/* استایل‌های اضافی برای فرم لاگین */
-.login-form {
-  background-color: #ffffff;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-}
-
-.login-form button {
+.container {
   width: 100%;
-  margin-top: 1rem;
-  background: #4CAF50;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ====== Card (form) ====== */
+.panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
   color: white;
-  font-size: 1.1rem;
+  font-size: 20px;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.14);
 }
 
-input{
-  padding: 1rem;
+h1 {
+  margin: 0;
+  font-size: 20px
+}
+
+p.lead {
+  margin: 6px 0 16px;
+  color: var(--muted);
+  font-size: 13px
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px
+}
+
+.field {
+  margin-bottom: 12px
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow .18s, border-color .15s;
+}
+
+input:focus,
+select:focus {
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.5);
+  border-color: rgba(124, 58, 237, 0.6)
+}
+
+.row {
+  display: flex;
+  gap: 10px
+}
+
+.small {
+  flex: 0 0 100px
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 8px 24px rgba(12, 18, 40, 0.4);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  font-weight: 600
+}
+
+.error {
+  color: #ffb4b4;
+  background: linear-gradient(90deg, rgba(255, 77, 77, 0.08), rgba(255, 77, 77, 0.03));
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 13px
+}
+
+/* ====== Participants list ====== */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px
+}
+
+.search {
+  width: 48%;
+  display: flex;
+  gap: 8px
+}
+
+.search input {
+  padding: 8px;
+  border-radius: 10px
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  animation: fadeIn .28s ease-out both;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden
+}
+
+.info {
+  flex: 1
+}
+
+.name {
+  font-weight: 700
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px
+}
+
+.card .actions {
+  margin-top: 8px
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+/* responsive */
+@media (max-width:980px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .search {
+    width: 60%;
+  }
 }

@@ -8,14 +8,87 @@
 </head>
 
 <body>
-    <h1 id="welcome">سلام کاربر!</h1>
+
+  <div class="container">
+    <!-- left: form -->
+    <section class="panel" aria-labelledby="title">
+      <div class="brand">
+        <div class="logo">CP</div>
+        <div>
+          <h1 id="title">ثبت‌نام مسابقه — تمرین عملی</h1>
+          <p class="lead">فرمی برای ثبت شرکت‌کننده‌ها بسازید. طراحی مدرن، ولیدیشن و ذخیره‌سازی در localStorage.</p>
+        </div>
+      </div>
+
+      <div id="msg" aria-live="polite"></div>
+
+      <form id="contestForm" autocomplete="off">
+        <div class="field">
+          <label for="fullname">نام و نام خانوادگی</label>
+          <input id="fullname" name="fullname" type="text" placeholder="مثال: یاسمن دارایی"
+
+        <div class="row">
+          <div class="field" style="flex:1">
+            <label for="email">ایمیل</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="field small">
+            <label for="age">سن</label>
+            <input id="age" name="age" type="number" min="10" max="120" placeholder="18" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="category">رشته مسابقه</label>
+          <select id="category" name="category">
+            <option value="web">وب — Web Development</option>
+            <option value="ui">طراحی رابط کاربری — UI</option>
+            <option value="algo">الگوریتم — Algorithm</option>
+            <option value="design">خلاقیت — Creative Design</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button type="submit">ثبت‌نام</button>
+          <button type="button" class="ghost" id="clearAll">پاک‌سازی همه</button>
+        </div>
+        <p style="margin-top:12px;font-size:13px;color:var(--muted)">نکته: تنها شرکت‌کنندگانی که سن >= 18 باشند ثبت می‌شوند. عکس پروفایل به‌صورت خودکار تولید می‌شود.</p>
+      </form>
+    </section>
+
+    <!-- right: participants -->
+    <section>
+      <div class="panel">
+        <div class="list-header">
+          <h2 style="margin:0">لیست شرکت‌کنندگان</h2>
+          <div style="color:var(--muted);font-size:13px" id="count">0 شرکت‌کننده</div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-bottom:12px;align-items:center">
+          <div class="search">
+            <input id="searchInput" placeholder="جستجو نام یا ایمیل..." />
+          </div>
+          <button id="exportBtn" class="ghost">خروجی JSON</button>
+        </div>
+
+        <div id="cards" class="cards"></div>
+      </div>
+    </section>
+  </div>
+
+
+
+
+
+    <!-- <h1 id="welcome">سلام کاربر!</h1>
 
     <input type="text" id="nameInput" placeholder="اسم خود را وارد کنید">
     <button id="saveNameBtn">ذخیره اسم</button>
 
     <h3>انتخاب رنگ پس‌زمینه</h3>
     <button class="red" id="redBtn">قرمز</button>
-    <button class="blue" id="blueBtn">آبی</button>
+    <button class="blue" id="blueBtn">آبی</button> -->
 
 
     <!-- <form class="signup-form">
@@ -34,7 +107,6 @@
         </div>
         <button type="submit">ثبت‌نام</button>
     </form> -->
-    <script src="/assets/js/script.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>
